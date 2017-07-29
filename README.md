@@ -20,8 +20,11 @@ The following **optional** features are implemented:
 * [ ] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
-
-- [ ] Add a cleaner UI to make the app for visually appealing
+* [ ] Add a cleaner UI to make the app more visually appealing.
+* [ ] Adding constraints to the view controllers so the app resizes depending on what device it's running on.
+* [ ] Add an app icon and splash screen.
+* [ ] Add an icon for the navigation bar button for settings.
+* [ ] Allow the user to enter a custom tip amount.
 
 ## Video Walkthrough 
 
@@ -43,7 +46,7 @@ The iOS development platform takes a while to get used to, but considering me be
 Question 2: "Swift uses [Automatic Reference Counting](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID49) (ARC), which is not a garbage collector, to manage memory. Can you explain how you can get a strong reference cycle for closures? (There's a section explaining this concept in the link, how would you summarize as simply as possible?)"
 
 **Answer:**
-Since modern iOS development supports Automatic Reference Counting for memory management, if the developer wants to access properties from an instance that was previous present they would need to make a "strong" reference to it so it does not go away. For ARC to make sure that it correctly gets rid of instances it no longer needs, it keeps track of references that made to each other and are called "strong". So to help ARC know what it should and shouldn't keep the developer can manually set instances related to each other user a referred as "strong". As long as this reference remains, ARC will not deallocate it. The way you get a strong reference cycle for closures is by setting your instances to a class and assigning it some value for one of its corresponding variables. Now that there is at least one "strong" reference, ARC will not deallocate it. ARC will only destroy the instances when all of the "strong" relationships are broken, thus allowing it to know that you no longer need the instances for further work within the code. Creating these strong references allow for your code to run smoothly and avoid crashes while also helping the system with memory management. 
+Since modern iOS development supports Automatic Reference Counting for memory management, if the developer wants to access properties from an instance that was previous present they would need to make a "strong" reference to it so it does not go away. For ARC to make sure that it correctly gets rid of instances it no longer needs, it keeps track of references that made to each other and are called "strong". So to help ARC know what it should and shouldn't keep the developer can manually set instances related to each other by using refereces referred to as "strong". As long as this reference remains, ARC will not deallocate it. The way you get a strong reference cycle for closures is by setting your instances to a class and assigning it some value for one of its corresponding variables. Now that there is at least one "strong" reference, ARC will not deallocate it. ARC will only destroy the instances when all of the "strong" relationships are broken, thus allowing it to know that you no longer need the instances for further work within the code. Creating these strong references allow for your code to run smoothly and avoid crashes while also helping the system with memory management. 
 
 ## License
 
